@@ -1,0 +1,102 @@
+Beginning of learning kali
+learnt basic commands
+
+cat day1.txt : read contents and print
+
+less filname {
+    
+    q : quit
+    shift g : bottom of file
+    /keyword : search keyword
+    n : next
+
+}
+
+more filename : page by page view
+
+touch filename : create file
+rm filename : delete file
+nano filename : edit file
+
+. : present directory
+.. : parent directory
+cp sourcepath destinationpath : copy file
+mv sourcepath destinationpath : move or cut paste file or rename file
+
+head -num filename : read from top num number of lines
+tail -num filename : read from bottom num number of lines
+
+sort filename : sort in decending order
+sort -r filename : sort in ascending order
+sort filename | uniq : sort and remove duplicates
+
+pipe sign = | : used to combine commands
+
+split -l num filename : split a file in each file containing 3 lines
+
+grep "word" filename : search word or string etc 
+egrep "word1|word2" filename : search multiple words or strings etc
+
+wildcards : * or [] or {}
+ls *x or x* : search file end or start with x
+touch filename{1..4} : create 4 files
+
+shuf filename : shuffle contents of file oo folders
+
+wc -l filename : find number of lines in file
+
+cmp file1 file 2 : compare file and file 2 contents identical or not
+diff -u file1 file2 : detailed differences in contents of files
+
+find /path/ -name filename : find full location of a file in suspected path
+locate filename : locate a file but database update must before this command
+sudo updatedb : update database
+
+history : show all previously used commands
+man Command : manual of a command
+command --help : help for a command
+
+which command : info  location and logic of command
+
+bc : to use binary calculator
+cal : current month calander
+cal monthname Year : calander of specific month or year
+
+uptime : show how long server running and users on it
+script : record activity on terminal press ctrl D to save and exit
+
+alias shortname="command" : create short name of a command
+
+gzip -k filename : zip a copy of file
+gunzip filename : unzip a file
+
+tar czf newname.tar.gz FolderPath : zip a folder 
+tar xzf newname.tar.gz : unzip a folder
+
+zip newfoldername.zip file1 file 2 : zip multiple files in new folder
+unzip newfoldername.zip : unzip above
+unzip -l newfoldername.zip : list files in zipped folder
+
+wget File_URL : download file from internet
+wget -O newname File_URL : download file and give desired name  
+curl API_link : download API
+sudo apt install ApplicationName : install App
+
+printenv : list environment variables on system
+
+awk -F , '{print $m,$n}' test.csv : print mth anf nth column from csv file
+cut -cm-n filename : give characters from mth to nth position from each line of file
+sed -n 'Np' filename : gives Nth line from file
+sed 's/OGword/Newword/g' filename : replace OGword with Newword to print on terminal
+
+tr [:upper:] [:lower:] <filename : change from lower case to upper case to print on terminal 
+
+truncate -s Size filename : make size of file to given size
+
+fold -wN : make a line horizontal to vertical by width of n
+
+chmod u+r filename : gives read permission to users
+u=user g=group o=other
+chown username filename : change owner of file
+chgrp groupname filename : change group owner of file
+
