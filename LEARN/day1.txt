@@ -1,1 +1,25 @@
 Beginning of learning kali
+learnt basic commands
+
+cat day1.txt : read contents and print
+
+less filname {
+    
+    q : quit
+    shift g : bottom of file
+    /keyword : search keyword
+    n : next
+
+}
+
+more filename : page by page view
+
+touch filename : create file
+rm filename : delete file
+nano filename : edit file
+
+. : present directory
+.. : parent directory
+ cp sourcepath destinationpath : copy file
+ mv sourcepath destinationpath : move or cut paste file 
+ 
