@@ -1,0 +1,39 @@
+output of one command redirect to next command
+symbol == |
+
+
+ps -ef | grep processname : find a specific process
+
+Find number of files in a directory {
+    ls -1 : all files listed alphabetically
+    wc -l : WORD COUNT to count lines
+ls -1 | wc -l  
+}
+
+Combine two files Content by cat and sort {
+    cat file1name file2name : combined contents of two files
+    sort : sort contents in symbolical then numerical then alphabetical order
+cat file1name file2name | sort
+}
+
+Find unique records from a file {
+    sort filename : sort and print file contents
+    uniq : gives unique values
+cat filename | sort | uniq 
+}
+
+To see only content from line M to line N in a file {
+    head -M : gives data from topline to Mth line
+    tail -N : gives data of N lines from bottom
+cat filename | head -N | tail N-M 
+}
+
+Commandname | more : show output from first line page by page
+commandname | less : show output in file format
+
+tee : redirect output to file and pipe both
+command | tee > filename
+
+xargs : convert standard input to command line arguments
+command1 | xargs command2
+
