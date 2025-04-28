@@ -100,3 +100,58 @@ u=user g=group o=other
 chown username filename : change owner of file
 chgrp groupname filename : change group owner of file
 
+RAM Memory
+{
+ram
+ram -h
+ram -th
+top
+}
+
+du : Disk utilization
+
+df -h : filesystem and disk space allocated
+
+hostname : to see hostname
+
+lscpu : cpu/thread/core info
+
+arch : architecture type
+
+lsblk : list of storage devices and disk partition
+
+uname -a : see OS name
+cat /etc/os-release : details of OS
+
+ps -ef | grep processname : check if process running
+pgrep processname : process ID
+kill -9 PID : kill process with PID
+pkill processname : kill process by name
+
+jobs : see all active jobs or tasks given to terminal
+ctrl z : suspend jobs
+bg : continue suspeneded job in background
+fg : continue suspeneded job in foreground
+
+nohup ./scriptname >/dev/null & : run script in background and no outputs stored
+nohup ./scriptname >> filename : run script in background and store output in file
+
+ifconfig : check ip address
+ping webname : check if wensite or server accesible
+
+useradd : create new user
+id username : give id if user exist
+passwd username : change password of user
+su username : switch user
+
+groupadd : create new group
+cat /etc/group : check if group created
+
+userdel username : delete user
+groupdel groupname : delete group
+usermod -G groupname username : add user to new group
+
+at : autoexecute script at give timing
+atq : check above jobs
+atrm ID : deltete above job with its ID
+
