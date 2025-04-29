@@ -1,0 +1,89 @@
+GREP = Global Regular Expression Print
+TO Search Expression
+command == grep [optional input] SearchExpression Folder/Filename
+
+
+To ignore Upper and Lower case in Search {
+    -i : remove case sensitivity
+ grep -i SearchExpression filename   
+}
+
+To Search Everything Except Given Expression {
+    -v : ignore given word in Search
+grep -v SearchExpression fiilename
+}
+
+Count of lines with Expression {
+    -c : counts
+grep -c SearchExpression filename
+}
+
+Exact Match Search {
+    -w : search Exact
+grep -w SearchExpression filename
+}
+
+Print Line number where Search Matches {
+    -n : give line number
+grep -n SearchExpression filename
+}
+
+Search Expression in Multiple Files {
+grep SearchExpression file1name file2name
+}
+
+Hide FileName while Search in Multiple Files {
+    -h : supress filename
+grep -h  SearchExpression file1name file2name
+}
+
+Search Multiple Keywords in Files {
+grep -e keyword1 -e keyword2 file1name file2name
+
+OR
+
+egrep keyword1|keyword2 filename file2name
+}
+
+Print Filename Containing SearchExpression {
+    -l : gives filename
+grep -l SearchExpression file1name file2name 
+}
+
+Match Contents of MUltiple Files {
+grep -f file1 file2 file3
+
+OR 
+
+grep -f filename * : all files in current folder
+}
+
+Print Line Starting With Keyword {
+grep ^keyword filename
+}
+
+Print Line End With Keyword {
+grep Keyword$ filename
+}
+
+Search Keyword in All Files in Directory {
+grep -R Keyword DirectoryPath/
+
+OR
+
+grep Keyword DirectoryPath/*
+}
+
+Searching Without Printing on Terminal {
+grep -q Keyword FileName
+echo $? : if output Zero then Found in Search
+}
+
+pgrep processname : get process ID
+
+fgrep SearchExpression : when search contains special characters
+
+zgrep Keyword ZippedFile : search in zipped file
+
+pdfgrep Keyword PDFfile : search in PDF file
+

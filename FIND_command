@@ -1,0 +1,75 @@
+TO Search File in Directory Heirarchy
+command : find [options] Path [OtherCommands]
+
+
+find /path/ -name FileName : search file in given path of given exact name
+find /path/ -iname filename : search file in path ignoring case sensitivity in name
+
+
+Search File Based on Size {
+find /path/ -size GivenSize
+}
+
+Find Only File/Folder in given Path {
+    f : file
+    d : Directory
+    l : symbolic link
+    b : block device
+    s : socket
+find /path/ -type One_Of_Above_AS_Need
+}
+
+Search Files for Given User only {
+find /path/ -user username
+} 
+
+Search File/Folder Based on inode number {
+ls -li : list files with inode number
+find /path/ -inum File_inode
+}
+
+Search File Based on number of links {
+find /path/ -links Number_of_links
+}
+
+Search Files Based On their Permissions {
+    r : read
+    w : write
+    x : execute
+find /path/ -perm /u=r
+}
+
+Search All Files Start with specific Letter {
+find /path/ -name "letter"*
+}
+
+Search All files Modified/Created after specific file {
+find /path/ -newer filename
+}
+
+Search Empty Files in Directory {
+find /path/ -empty
+}
+
+Search and Delete empty files {
+    -exec command : execute command written
+    {} : all results coming to command
+    \; : closing statement
+find /path/ -empty -exec rm {} \;
+}
+
+Search All Files in Range of Size {
+find /path/ -size +A -size -B : more than A size till B size
+}
+
+Search N days old files {
+find /path/ -mtime Days_number
+}
+
+
+
+
+
+
+
+

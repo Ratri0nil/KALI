@@ -1,0 +1,36 @@
+WildCards : Special Characters
+* : matches any number of Characters
+? : matches exact one Character
+[] : matchesany one of enclosed Character
+{} : matches a group of characters 
+
+
+Find files endingor starting with Some Extension {
+ls *Extension : * can be any character or group of characters
+ls ?Extension : ? is any one character
+}
+
+Create/list/delete any number of files {
+    touch filename{1...Number}
+    ls filanme{1..Number}
+    rm filename{1..Number}
+}
+
+Find files with exact N number of characters name {
+    ls ??..Ntimes
+}
+
+Find files with name starting or ending with A or B or C etc {
+    ls [ABC]*
+}
+
+Find File with Numeric/Alphabets Values in Name {
+    ls *[0-9]*
+    ls *[A-Z]*
+    ls *[a-z]*
+}
+
+
+
+
+
