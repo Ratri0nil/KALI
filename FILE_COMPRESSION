@@ -1,0 +1,28 @@
+Reduce File Size 
+
+
+ls -lh : list detailed in human readable format
+
+gzip filename : compress file
+gunzip filename.gz : decompress file
+
+ Preserve properties and Compress Folder {
+    tar -cvf NewName.tar foldername : create tar archive as file format
+    gzip NewName.tar : compress above tar 
+
+    OR 
+
+    tar -czvf NewName.tar.gz foldername
+}
+
+Decompress Folder {
+ tar -xvf NewName.tar.gz : decompress Folder
+}
+
+zip NewName.zip file1 file2 : Compress multiple files
+unzip NewName.zip : decompress above
+
+tar -tczf filename.tar.gz : list in detail files or folders in zipped folder
+zipinfo NewName.zip : Above Alternative
+
+zcat ZippedFileName : read contents of zipeed file
