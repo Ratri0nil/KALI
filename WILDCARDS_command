@@ -29,8 +29,3 @@ Find File with Numeric/Alphabets Values in Name {
     ls *[A-Z]*
     ls *[a-z]*
 }
-
-
-
-
-
