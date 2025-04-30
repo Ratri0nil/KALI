@@ -1,0 +1,17 @@
+Link = Shortcut : A coonection between File Name and Actual Data on Disk
+command : ln : link name
+
+Hard Link : Delete/Rename original file No affect to link
+            file inode number Equal link inode number
+            
+Soft Link : Delete/Rename original file Affect to link
+            file inode number Not equal link inode number
+
+
+ln -s /path/ LinkName : Create soft link of a File
+
+ls -li : check inode number
+
+ln /path/ Linkname : create hard link of a file
+
+
