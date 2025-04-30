@@ -1,0 +1,20 @@
+Send one output as input to other
+symbol == > : overwrite
+symbol == >> : append
+FileDescriptor = 0 : stdin : standard input 
+FileDescriptor = 1 : stdout : standard output
+FileDescriptor = 2 : stderr : standard error
+
+Merge Multiple Files Content in Single File {
+cat file1 file2 >> file3
+}
+
+Extract Relevent data from one file into other file {
+grep ReleventExpression file1name >> filename
+}
+
+Standard Error : when command gives error {
+    command 2>> filename : redirect error only
+    command &>> filename : redirect error or output
+}
+
