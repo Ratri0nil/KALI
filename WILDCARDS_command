@@ -21,7 +21,7 @@ Find files with exact N number of characters name {
 }
 
 Find files with name starting or ending with A or B or C etc {
-    ls [ABC]*
+    ls [ABC]* : A,B,C can be letter,numbers or symbols
 }
 
 Find File with Numeric/Alphabets Values in Name {
@@ -29,3 +29,5 @@ Find File with Numeric/Alphabets Values in Name {
     ls *[A-Z]*
     ls *[a-z]*
 }
+
+
