@@ -1,0 +1,17 @@
+Alias : A shortcut for long or series of commands
+
+alias ShortName="Command" : create temporary alias
+
+alias -p : check all Existing Alias
+
+create permanent alias for a user {
+    nano .bashrc : edit this file
+    alias ShortName="command" : add this commands
+    source .bahsrc : apply changes immediatly
+}
+
+create permanent alias for a user {
+    nano /etc/bashrc : edit this file
+    alias ShortName="command" : add this commands
+    source /etc/bashrc : apply changes immediatly
+}
