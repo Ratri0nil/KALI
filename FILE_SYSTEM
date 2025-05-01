@@ -1,0 +1,25 @@
+A structure to Manage Data Storage by heirarchy of directory and files
+
+
+df -Th : check FileSystem
+
+pwd : present working directory
+cd {
+    cd : change directory to home 
+    cd - : go to recent directory
+    cd / : go to parent or root directory
+    cd DirectoryName : go to spcific directory
+
+}
+
+ls : list folders or files in directory
+
+inode : store metadata about file or folder {
+    ls -li : list with inode number
+}
+
+
+
+
+
+
