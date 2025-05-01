@@ -1,0 +1,42 @@
+Store Data Accesible to Script/Program Running in Shell
+
+
+printenv OR env : show Existing Environment Variables
+
+See Specific Environment Variable {
+    echo $VAR_NAME 
+    
+    OR
+
+    printenv VAR_NAME
+}
+
+Create Local Environment varibales {
+    MY_VAR=SomeValue : limited to current session of present shell
+    unset MY_VAR : remove value of variable
+}
+
+Add Local Environment Variable {
+    export MYVAR="Some Value" : limited to current session of present shell
+}
+
+Permanent Adding Environment Variable to a user profile {
+    nano ~/.bashrc : edit file
+    export MYVAR="something variable" : add this to file and Save
+    source ~/.bashrc : apply changes
+}
+
+Permanent Adding Environment Variable ALL user profiles {
+    nano /etc/environment : open to edit file
+    export MYVAR="something variable" : add this to file and Save
+    source /etc/environment : apply changes
+}
+
+
+
+
+
+
+
+
+
