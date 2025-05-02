@@ -1,0 +1,27 @@
+
+df : show Information about File System 
+
+df -h : human readable info about file system
+
+df -BK : show in kilobytes
+df -BM : show in Megabytes
+df -BG : show in Gigabytes
+
+du : Show Disk Utilization
+
+du -h : human readable info about Disk Utilization
+
+du -ah : show disk utilization of files and folders in detail
+
+du -ahc : shows total space occupied in last
+
+du -BK : show in kilobytes
+du -BM : show in Megabytes
+du -BG : show in Gigabytes
+
+free : show free and used RAM memory
+
+free -s N : refresh memory after N seconds
+
+free -c N : refresh N times and exit
+
