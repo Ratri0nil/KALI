@@ -139,7 +139,7 @@ nohup ./scriptname >> filename : run script in background and store output in fi
 ifconfig : check ip address
 ping webname : check if wensite or server accesible
 
-useradd : create new user
+useradd UserName: create new user
 id username : give id if user exist
 passwd username : change password of user
 su username : switch user

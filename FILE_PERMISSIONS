@@ -2,6 +2,7 @@ r : read Permissions
 w : write Permissions
 x : execution Permissions
 - : no Permissions
++ : ACL used
 
 Each Set of rwx is from 3 sets for USER GROUP OTHERS
 u : user
@@ -44,3 +45,32 @@ Change Owner {
     chown USERname:GROUPname filename : change owner to username in groupname
 } 
 
+
+Access Control List (ACL) {
+When chmod not feasible to give permissions to Others for File or Directory    
+    getfacl : Get file ACL
+    setfacl : Set file ACL
+}
+
+getfacl Filename : Check File Permissions
+
+Add Permission for A User {
+    setfacl -m u:UserName:rwx Filename
+}
+
+Add Permission for A Group {
+    setfacl -m g:GroupName:rwx FileName
+}
+
+Remove A specific Permission {
+    setfacl -x u:UserName:rwx FileName
+}
+
+Remove All Permissions {
+    setfacl -b FileName 
+}
+
+Add permissions for a user for all files in a folder {
+    setfacl -Rm u:USERname:rwx Folder/
+    -R : for recursive use
+}
