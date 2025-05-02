@@ -1,0 +1,27 @@
+Control Status of Services
+
+systemctl start ServiceName : Start Service
+
+systemctl stop ServiceName : Stop Service
+
+systemctl status ServiceName : check status of Service
+
+systemctl restart ServiceName : restart service 
+
+systemctl enable ServiceName : service auto start everytime on reboot
+
+systemctl is-enabled ServiceName : check if service is enabled or not
+
+systemctl enable --now ServiceName : enable service and start it immediately
+
+systemctl disable ServiceName : disable service from auto start on reboot
+
+systemctl mask ServiceName : disable service from starting or enabling
+
+systemctl unmask ServiceName : enable service to start or enable
+
+systemctl list-unit-files --type=service : list all services and their status
+
+systemctl list-units --type=service : list all services and their status
+
+

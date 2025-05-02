@@ -1,0 +1,33 @@
+Check Running Processes
+PID : Unique Process ID
+TTY : Terminal Type of Current User
+TIME : Amount of CPU in minutes and seconds that Process Running
+CMD : Name of Command that Launched Process
+
+
+ps : Process Running in Shell
+
+ps -e : See All Running Processes
+ps -A : Above Alternative
+
+ps -ef : Detailed info about All Running Processes
+
+ps aux : More info in BSD (Berkely Distribution Format) format
+
+ps -u UserName : check Process by UserName
+
+ps -G GroupName : check Process by GroupName
+
+ps -ejH : see Process Tree
+
+kill [Optional: signal name or number] [PID] : Kill Process 
+
+kill -l : check different signal name and numbers
+
+
+TOP ( Table Of Process) : Real Time View of Running Processes and Display Kernal Managed Tasks
+
+
+
+
+
