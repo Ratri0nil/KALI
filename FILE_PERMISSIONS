@@ -1,0 +1,46 @@
+r : read Permissions
+w : write Permissions
+x : execution Permissions
+- : no Permissions
+
+Each Set of rwx is from 3 sets for USER GROUP OTHERS
+u : user
+g : group
+o : other
+a : all
+
+each integer from 0 to 7 in 000 to 777 is for USER GROUP OTHER
+0 : NONE
+1 : Execute
+2 : write
+3 : write and execute
+4 : read
+5 : read and execute
+6 : read and write
+7 : read write execute
+
+ls -l OR ls -ltr : check File Permissions
+
+Modify Permissions of a file {
+    chmod a+rwx filename : Give read write execute permissions to All  
+    chmod a-rwx filename : Take read write execute permissions from All
+
+    oR
+
+    chmod u=rwx,g=rwx,o=rwx filename
+
+}
+
+Modify Permissions of All files in a directory {
+    chmod -R u=rwx,g=rwx,o=rwx DirectoryName/
+}
+
+Octal Method {
+    chmod 777 filename : Give read write execute permissions to All
+    chmod 000 filename : Take all permissions from All
+}
+
+Change Owner {
+    chown USERname:GROUPname filename : change owner to username in groupname
+} 
+
