@@ -25,9 +25,32 @@ kill [Optional: signal name or number] [PID] : Kill Process
 kill -l : check different signal name and numbers
 
 
-TOP ( Table Of Process) : Real Time View of Running Processes and Display Kernal Managed Tasks
+TOP ( Table Of Process) : 
+top : Show Real Time View of Running Processes and Display Kernal Managed Tasks {
 
+c : show aboslute paths of Commands related to proces
+k : PID : kill process
+n : show given number of tasks at a time
+d OR s : refresh after given number of seconds
+r : change nice value of user
+u : filter tasks by user
+f: field management : press spacebar to add/remove
 
+}
 
+jobs : show active jobs
 
+bg : resume All jobs in background
 
+fg : resume All jobs in foreground
+
+Resume Specific Job {
+    bg %JobID OR fg %JobID
+}
+
+NICE value : scale from -20 to 19 : lower the number more priority to task
+nice -n NICEValue TaskName : Give Desired nice value to Task
+
+nohup ProcessName & : Keep Process Running After closing terminal and direct output to nohup.out file
+
+nohup processName > /dev/null 2>&1 & : Same Above without storing output
