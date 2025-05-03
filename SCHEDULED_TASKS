@@ -1,0 +1,100 @@
+CRON jobs {
+cron daemon is used to schedule tasks like :
+    Backing Up Files
+    Running System maintainance
+    Sending Emails etc.
+
+Stored in File : crontab
+service used is : cron
+
+}
+
+crontab -l : list current cron jobs 
+
+crontab -e : to edit crontab
+
+crontab -r : remove all cron jobs
+
+Fromat of cron {
+    * * * * * /ShellPathOptional/ /FilePath/
+}
+sequence of stars == MM( 0 to 59 ) HH( 0 to 23 ) Day( 1 to 31 ) Month( 1 to 12 ) Weekday( 0 to 7)
+
+Other UseCases {
+    30 7 * * * : everyday at 07:30AM
+    15 * * * * : every hour at 15th minute
+    */15 * * * * : every 15 minutes
+    15 4 * * 0-5 : at 04:15AM from sunday to friday
+    0 20 10,20,29 2 * : on dates 10th 20th 29th of febraury at 20:00PM
+
+}
+
+Special Strings {
+    @reboot /ScriptPath/ : Run after reboot 
+    @daily /ScriptPath/ : run daily
+    @hourly /ScriptPath/ : run every hour
+    @yearly OR @annually : run every year
+    @weekly : run every week
+    
+}
+
+Redirect Output of task {
+    * * * * * /TaskFilePath/ > /NewFilePath/ 2>&1
+}
+
+Environment Variables in cron {
+    PATH=/Env_var_path/
+}
+Add Environment Variables at top of Cron File
+
+
+
+AT {
+    schedule a job once only
+    service used : atd
+}
+
+at HH:MM : schedule job at TIME
+write Script Path or commands and ctrl+D to save
+
+atq : list at jobs
+
+atrm JobID : remove a job
+
+Other UseCases {
+    at HH:MM DDMMYYYY : at specifc time and dates
+    at HH:MM +N_TIME : after specific TIME {
+        +N days OR hours OR minutes
+    }
+    at HH:MM tomorrow : on tomorrow
+    at HH:MM Mon : on monday
+    at HH:MM next month :
+    at HH:MM Nov 30 :
+    at NOW +N_TIME : After specific time from current time
+
+}
+
+
+
+ANACRON {
+    A linux utility
+    Even If server is Down or OFF Periodic Task is Performed
+
+}
+
+dpkg -l | grep anacron : check anacron is present on server otherwise Install
+
+ls /etc/anacrontab : check anacrontab configuration present to edit it
+
+Edit AnacronTab {
+    nano /etc/anacrontab : open to edit
+    PERIOD DELAY IDENTIFIER_NAME Commands OR Path : add this line
+
+}
+
+Trigger crontab to check {
+    anacron -f -d -n : Forcefully Debugging Now
+}
+
+
+
