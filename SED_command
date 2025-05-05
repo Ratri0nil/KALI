@@ -1,0 +1,138 @@
+Syntax : sed 'Expression' FilName
+
+
+Show Given Range of Line {
+    -n : show changed content
+    -e : For Multiple Expressions
+
+    sed -n 'Np' FileName : print Nth Line
+
+    sed -n '$p' FileName : print Last Line
+    
+    sed  -n 'N,Mp' FileName : print Nth Line to Mth Line
+    
+    sed -n -e '2p' -e '4p' FileName : print only Mth And Nth Line
+
+    sed -n 'M,+Np' FileName : print From Mth Line till N number of Lines
+
+    sed -n 'M~Np' FileName : print from Mth Line with gap of N Lines
+
+}
+
+Search Line With Keyword {
+    sed -n '/KeyWord/p' FileName : Search Line containing Keyword
+
+    sed -n -e '/Keyword1/p' -e '/keyword2/p' : Search Lines Containing One of Given Keyword 
+
+
+}
+
+File Containing Sed Commands {
+    sed -n -f SedFile TestFile : apply commands in SedFileedfile on TestFile
+
+}
+
+Replace A Word in File and show Changes {
+    s : substitute
+    g : global
+    ! : NOT operator
+
+    sed 's/OldWord/NewWord/g' FileName : change Word in whole File
+
+    sed 'N s/OldWord/NewWord/g' FileName : change Word in Nth Line Only
+
+    sed 'N! s/OldWord/NewWord/g' FileName : change Word in Whole File Except Nth Line
+
+    sed '/KeyWord/ s/Old/New/g' Filename : change in Line Containing Keyword
+
+}
+
+Edit in File {
+    i : overwrite
+   
+    sed -i 's/OldWord/NewWord/g' FileName : Replace A word in File
+
+}
+
+Delete Line {
+    sed 'Nd' FileName : Delete Nth Line
+
+    sed '/KeyWord/d ' FileName : Delete Line containing Keyword
+
+    sed '/^$/d' FileName : Delete Empty Lines
+
+}
+
+Extract Specific Data to New File {
+    w : write
+
+    sed '/KeyWord/ w NewFileName' FileName : extract lines containing Keyword
+
+}
+
+Add New Line {
+    a : append
+    c : change
+    i : insert
+
+    sed 'N a Expression' FileName : add Expresssion at After Nth Line
+
+    sed '/KeyWord/ a Expression' FileName : add Expression After Line Containing Keyword
+
+    sed 'N c NewExpression' FileName : Edit Nth Line and add  New Expression
+
+    sed 'N i Expression' FileName : insert Expression in Nth Line 
+
+}
+
+Check Hidden Characters in File {
+    sed -n 'l' FileName 
+
+    sed -n 'l N' FileName : print content with N characters in each line on terminal
+
+    Hidden characters = space,tab,newline,empty line, etc
+}
+
+Read File content and use in Commands {
+    r : Read
+
+    sed 'N r ExtFile' TestFileFileName : read ExtFile After nth line of TestFile 
+} 
+
+Stop sed Commands After Certain Condition {
+    q : Quit
+
+    sed '/keyword/ q' FileName : stop printing after Keyword Found first time
+
+}
+
+sed With inbuilt Linux Commands {
+    e : Expression
+
+    sed 'N e date' FileName : Add Date at Nth Line
+    sed 'N e pwd' FileName : Add PWD at nth Line
+
+}
+
+Increase Readability {
+    sed ' = ' FileName : print line number before each line data 
+
+    sed -n '/^EXP/p' FileName : print Lines Starting With EXP
+
+    sed -n '/EXP$/p' FileName :  print Lines Ending With EXP
+
+    sed -n '/^[EXP1EXP2]/p' FileName : Starting With EXP1 or EXP2
+    sed -n '^[a-z]/p' FileName : Starting with a to z alphabets Range
+
+}
+
+Use Of Classes {
+    digit : look for digits
+    upper : lokk for Upper case 
+    lower : look for lower case
+    space : look for space
+    punct : look for punctuattion
+    alpha : look for alphabets
+    
+    sed -n '/[[:CLASS:]]/' FileName: print lines containing class
+}
