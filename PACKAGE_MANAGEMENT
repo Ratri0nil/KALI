@@ -1,0 +1,28 @@
+Package {
+    installing
+    update
+    upgrade
+    view info
+    configuration
+
+    APT : Advanced Package Tool
+}
+
+sudo : root user permission
+
+apt install NAME : installing
+
+apt remove NAME : Delete
+
+apt autoremove : Delete dependencies
+
+apt update : upadating
+
+apt-cache search NAME :
+
+
+
+
+
+
+
