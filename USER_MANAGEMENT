@@ -1,0 +1,94 @@
+
+id UserName : check User ID if User Exist
+
+useradd UserName : create new user
+    {
+        -g GroupName : add user to this group
+
+        -s /bin/bash : set default Shell for User to this
+
+        -c "Description" : About User Info
+
+        -m -d /home/HomeDirectoryName : create Home Directory for User
+    }
+
+userdel UserName : Delete user
+    {
+        userdel -r : Delete home Directory of User also
+
+        userdel -f : Force Delete user even if logged in
+    }
+
+Modify User
+ {
+    usermod -G GroupName UserName : Add User to new group
+
+    usermod -g GroupName UserName : Change default Group
+
+    usermod {
+         -m -d /home/NewFolder : move home folder content to new folder
+
+         -p : for password
+
+         -s : for shell type
+
+         -L OR -U : Lock/Unlock User
+
+    }
+
+}
+
+passwd UserName : set password for user
+
+groupadd GroupName : create Group
+
+groupdel groupName : delete group
+
+
+
+/etc/group : A Folder Containing Groups Info
+/etc/passwd : A folder containing User Info
+/etc/shadow : A folder containing Password Info {
+    [UserName] [Encrypted_Password] [Last_PassWord_Change] [Min_password_age] [Max_password_age] [Warning_Period] [Inactive_period] [Expire_date] [unused]
+}
+
+PassWord Aging {
+    chage : One Time for Specific User
+    -d : Days Since JAN 1 1970 Password Last Changed
+    -m : After this many days user allowed to change password
+    -M : password valid for this many days
+    -W : Warn user about password Expiration before this many days
+    -I : Account Disable After this many days of expired password
+
+}
+
+Password Aging for All new user by default {
+    PASS_MAX_DAYS [NUM] 
+    PASS_MIN_DAYS [NUM]
+    PASS_MIN_LEN [NUM]
+    PASS_WARN_AGE [NUM]
+
+    /etc/login.defs : edit this file with above
+}
+
+su UserName : switch/subsitute user : PWD same as prevoius
+su - UserName : PWD changes to home of user
+exit : exit current user or shell
+
+sudo su OR sudo -i : Switch to Root user
+{
+    /etc/sudoers : Details of Sudo present here
+
+    usermod -aG sudo UserName : add user to sudoers group
+
+    gpasswd -d Username sudo : remove user from sudoers group
+
+    visudo : open sudoers file and edit for specific permissions to user
+
+}
+
+
+
+
+
+
