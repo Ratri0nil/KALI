@@ -1,0 +1,32 @@
+SSH : secure shell 
+Network Communication Protocol for devices
+Default Port = 22
+Other Alternatives Port : 1024 to 32767
+
+Syntax {
+    ssh UserName@IP 
+
+    OR
+
+    ssh UserName@HostName
+}
+
+ 
+ssh -V : check Present SSH version
+sudo apt install openssh-server : install SSH
+/etc/ssh/sshd_config : File Contain Info About SSH
+
+systemctl status ssh : check if ssh active
+systemctl start ssh : start ssh service
+systemctl stop ssh : stop ssh service
+
+PassWordLess SSH {
+    ssh-keygen : generate ssh key : pair of public and private
+
+    ssh-copy-id -i /PATH/sshkeys.pub UserName@IP : copy key to other server
+
+
+}
+
+
+
