@@ -74,3 +74,27 @@ Add permissions for a user for all files in a folder {
     setfacl -Rm u:USERname:rwx Folder/
     -R : for recursive use
 }
+
+SUID { 
+    File Execute as Owner of file regardless of current user
+    symbol : s OR S
+
+    chmod u+s Filename : set SUID permission
+}
+
+
+SGID {
+    File Execute as Group which own File
+    All  Files in SGID permission directory also
+
+    chmod g+s : set SGID permission
+}
+
+Restricted Deletion Flag {
+    only owner can delete or rename file/folder
+
+    symbol : t OR T
+
+    chmod o+t FileName : set sticky bit
+
+}
