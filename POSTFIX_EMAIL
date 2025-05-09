@@ -1,0 +1,44 @@
+
+Installation {
+    sudo apt install postfix mailutils
+
+    sudo postfix reload : reload after changes
+
+}
+
+Configure {
+    cd /etc/postfix/ : go to this location
+    main.cf : Edit this file to add below lines
+
+    relayhost = [smtp.gmail.com]:587
+    myhostname = HostName
+    mydestination = $myhostname, ILAK, localhost.localdomain, localhost
+
+
+#Enable sasl authentication for postfix
+smtp_sasl_auth_enable = yes
+smtp_tls_security_level = encrypt
+
+#Location of sasl password we save
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+
+#Disallow methods of anonymoous authentication
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+
+
+}
+
+Password {
+    touch sasl_passwd : create file in sasl directory of pwd 
+
+    [smtp.gmail.com]:587 username@gmail.com:your_app_password : add this line
+
+    sudo postmap  sasl_passwd : make db file of above file
+
+}
+
+systemctl start postfix : start postfix service
+
+echo "Message" | mutt -s "Subject" -a AttachmentFileLocation -- Receiver_Email
+
