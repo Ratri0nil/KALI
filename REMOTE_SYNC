@@ -1,0 +1,33 @@
+RSYNC {
+    Need SSH
+
+    Speed Flexible Efficient
+
+    Optimize File Transfer with Only Changes Transfered
+
+    Preserve Ownership Permissions Timestamps
+
+}
+
+Syntax : rsync [Options] Source Destination
+{
+    Options can be :
+        -a OR --archive : archive files
+        -v OR --verbose : verbose output
+        -z OR --compress : compress files
+        --progress : show progress during Transfer
+        -b : backup
+        -d : delete
+        --backup-dir=/path/ : backup in this directory
+
+    Destination : UserName@IP:/Folder/Path
+}
+
+
+
+
+
+
+
+
+
