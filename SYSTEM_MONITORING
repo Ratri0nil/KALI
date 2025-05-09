@@ -25,3 +25,10 @@ free -s N : refresh memory after N seconds
 
 free -c N : refresh N times and exit
 
+Demessage {
+    dmsg -HTx : human readable with Timestamp and decoded
+
+    dmesg -w : live monitoring
+
+    
+}
