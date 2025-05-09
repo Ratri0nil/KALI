@@ -98,3 +98,34 @@ Restricted Deletion Flag {
     chmod o+t FileName : set sticky bit
 
 }
+
+Default Permissions Check {
+    umask : check default permissions
+    0777 - result = Permission Octal
+
+    OR
+
+    umask -S 
+
+}
+
+Change Default Permissions {
+    umask u+rwx,g+rw,o+r : Permission changed till current terminal Working
+
+    .bashrc : edit this file for permanent changes and add above line
+}
+
+Change User OwnerShip {
+    chown -c NewUsername FileName 
+
+}
+
+Change Group OwnerShip {
+   chgrp -c NewGroupName FileName 
+
+}
+
+
+
+
+
