@@ -9,6 +9,8 @@ Syntax {
     OR
 
     ssh UserName@HostName
+
+    OR sshpass -p "$Password" ssh UserName@IP
 }
 
  
